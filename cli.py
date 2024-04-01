@@ -1,4 +1,5 @@
 import argparse
+import sys
 import getpass
 import users
 import orders
@@ -49,18 +50,26 @@ def view_orders(username):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='CLI-приложение для заказа такси')
+    parser = argparse.ArgumentParser(description='CLI-приложение для заказа такси', add_help=False)
     parser.add_argument('-r', '--register', action='store_true', help='Регистрация нового пользователя')
     parser.add_argument('-l', '--login', action='store_true', help='Вход в систему')
     parser.add_argument('-o', '--order', action='store_true', help='Создание заказа такси')
     parser.add_argument('-v', '--view', action='store_true', help='Просмотр истории заказов')
 
-    args = parser.parse_args()
+    args, unknown = parser.parse_known_args()
+
+    if '-h' in unknown or '--help' in unknown:
+        parser.print_help()
+        return
+    
+    if not any(vars(args).values()):
+        print("Не указаны аргументы командной строки. Используйте -h или --help для справки.")
+        sys.exit()
 
     if args.register:
         register_user()
     elif args.login:
-        username = login()
+        username = login() 
         if username:
             if args.order:
                 create_order(username)
