@@ -1,26 +1,27 @@
 import bcrypt
-
-# Пример базы данных пользователей (может быть заменена на использование реальной БД)
-users_database = {}
+import database as db
 
 
+# регистрация пользователя
 def register_user(username, password):
-    if username in users_database:
-        return False, "Пользователь с таким именем уже существует"
 
-    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-    users_database[username] = hashed_password
-    return True, "Пользователь успешно зарегистрирован"
+    # здесть должны быть строчки с хешированием пароля!!!!!
+
+    # запрос в database.py о добавлении ногово пользователя
+    db.register_user_database(username, password)
+    return True, "Пользователь успешно зарегестрирован"
 
 
+# аунтефикация пользователя
 def authenticate_user(username, password):
-    if username not in users_database:
-        return False, "Пользователь не найден"
+    # проверка на наличие имени
+    if db.check_users(username)[0]:
+        return False, "Пользователь с таким именем не существует"
+    
+    # здесть должны быть строчки с хешированием пароля!!!!
 
-    stored_password = users_database[username]
-    if bcrypt.checkpw(password.encode('utf-8'), stored_password):
-        return True, "Успешная аутентификация"
-    else:
+    # запрос в database.py о возможности входа
+    if not db.authentication_user_database(username, password):
         return False, "Неверный пароль"
-
-# Другие функции для работы с пользователями (например, изменение пароля, удаление пользователя и т. д.)
+    else :
+        return True, "Успешная аутентификация"
