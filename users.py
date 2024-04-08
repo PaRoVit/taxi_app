@@ -8,7 +8,7 @@ def register_user(username, password):
     # здесть должны быть строчки с хешированием пароля!!!!!
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     # запрос в database.py о добавлении ногово пользователя
-    db.register_user_database(username, password)
+    db.register_user_database(username, hashed_password)
     return True, "Пользователь успешно зарегестрирован"
 
 
@@ -21,7 +21,7 @@ def authenticate_user(username, password):
     # здесть должны быть строчки с хешированием пароля!!!!
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     # запрос в database.py о возможности входа
-    if not db.authentication_user_database(username, password):
+    if not db.authentication_user_database(username, hashed_password):
         return False, "Неверный пароль"
     else :
         return True, "Успешная аутентификация"
