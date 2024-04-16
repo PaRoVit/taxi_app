@@ -1,66 +1,49 @@
 {
     "users": [
         {
-            "username": "pavel",
-            "password": "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e",
+            "username": "Pavel",
+            "password": "7adf77835460353a6d25cc1f41f6f69fa58f368c8494093b502c2aa02049df82"
+        },
+        {
+            "username": "qwer",
+            "password": "c938ba82dae4c793354613cd48a379cfd5f85064ca81cd1b60606b9bac400f32",
             "trips": [
                 [
-                    "q",
-                    "w",
-                    "07/04/2024 18:07"
-                ],
-                [
-                    "a",
-                    "s",
-                    "07/04/2024 18:07"
-                ],
-                [
-                    "z",
-                    "x",
-                    "07/04/2024 18:07"
-                ],
-                [
-                    "moscow",
-                    "nowgorod",
-                    "07/04/2024 20:55"
-                ],
-                [
-                    "qwer",
-                    "asdf",
-                    "07/04/2024 21:01"
+                    "kreml",
+                    "socol",
+                    "15/04/2024 18:10"
                 ]
             ]
         },
         {
-            "username": "pablo",
-            "password": "6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4"
+            "username": "Ruslan",
+            "password": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
         },
         {
-            "username": "paro",
-            "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
-        },
-        {
-            "username": "pa",
-            "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-            "trips": [
-                [
-                    "r",
-                    "t",
-                    "07/04/2024 18:07"
-                ]
-            ]
-        },
-        {
-            "username": "dk",
-            "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
-        },
-        {
-            "username": "dima",
+            "username": "Kuza",
             "password": "f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3"
         },
         {
-            "username": "sofa",
-            "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+            "username": "pablo",
+            "password": "f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3",
+            "trips": [
+                [
+                    "praga",
+                    "london",
+                    "15/04/2024 23:04"
+                ]
+            ]
+        },
+        {
+            "username": "Nick",
+            "password": "688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6",
+            "trips": [
+                [
+                    "socol",
+                    "cska",
+                    "15/04/2024 23:20"
+                ]
+            ]
         }
     ]
 }
