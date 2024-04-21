@@ -7,11 +7,49 @@ import datetime
 
 
 class Cli(Users, Database):
+    """
+    A command-line interface (CLI) for a taxi ordering application.
+
+    Attributes
+    ----------
+    username : str
+        The name of the user.
+    password : str
+        The password of the user.
+    place_of_departure : str
+        The place of departure for the taxi order.
+    destination : str
+        The place of arrival for the taxi order.
+    time : str
+        Time of the taxi order creation in the format "DD/MM/YYYY XX:XX".
+
+    Methods
+    -------
+    register_user()
+        Register new user. Requests username and password. Returns bool.
+    login()
+        Login user. Requests username and password. Returns username or None and prints message.
+    create_order(username)
+        Create new order. Requests place of departure and place of arrival.
+        Prints message about creating taxi order or error.
+    view_orders(username)
+        Prints the user's taxi orders history.
+    handle_args()
+        Options for using the application. -r - register, -l - login, -e - exit, -h - help. Returns option(-r, -l, -e).
+    """
     def __init__(self, username=None, password=None, place_of_departure=None, destination=None, time=None) -> None:
         super().__init__(username, password, place_of_departure, destination, time)
 
     # регистрация пользователя
     def register_user(self):
+        """
+        Register new user. Requests username and password. Returns bool.
+
+        Returns
+        -------
+        bool
+            True if the user was successfully registered, False otherwise.
+        """
         username = input("Введите имя пользователя: ")
         # проверка наличия пользователя в базе данных
         success, message = Database.check_users(self, username)
@@ -37,6 +75,14 @@ class Cli(Users, Database):
 
     # вход в систему
     def login(self):
+        """
+        Login user. Requests username and password. Returns username or None and prints message.
+
+        Returns
+        -------
+        username : str
+            The username if the user was successfully logged in, None otherwise.
+        """
         username = input("Введите имя пользователя: ")
         password = getpass.getpass("Введите пароль: ")
 
@@ -51,6 +97,15 @@ class Cli(Users, Database):
 
     # создание заказа
     def create_order(self, username):
+        """
+        Create new order. Requests place of departure and place of arrival.
+        Prints message about creating taxi order or error.
+
+        Parameters
+        ----------
+        username : str
+            The username who ordered the taxi.
+        """
         place_of_departure = input("Введите место отправления: ")
         destination = input("Введите место назначения: ")
         # запись времени из онлайн
@@ -65,6 +120,14 @@ class Cli(Users, Database):
 
     # просмотр истоиии заказов
     def view_orders(self, username):
+        """
+        Prints the user's taxi orders history.
+
+        Parameters
+        ----------
+        username : str
+            The name of the user.
+        """
         # вытягиваю история заказов из базы
         orders = Database.get_user_orders(self, username)
         # узнаю тип переменной, чтобы понять список там или строка
@@ -78,6 +141,9 @@ class Cli(Users, Database):
                 print(f"{value[0]} -> {value[1]}, {value[2]}")
 
     def handle_args(self):
+        """
+        Options for using the application. -r - register, -l - login, -e - exit, -h - help. Returns option(-r, -l, -e).
+        """
         # здесь находятся ключи для дальнейшего запуска проги
         parser = argparse.ArgumentParser(description='CLI-приложение для заказа такси', add_help=False)
         parser.add_argument('-r', '--register', action='store_true', help='Регистрация нового пользователя')
