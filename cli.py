@@ -156,7 +156,7 @@ class Cli(Users, Database):
         # если введён ключ -h, то покажет все возможные ключи что есть
         if '-h' in unknown or '--help' in unknown:
             parser.print_help()
-            return
+            sys.exit()
         
         # если запуск без ключа, то выведется строка о помощи
         if not any(vars(args).values()):
