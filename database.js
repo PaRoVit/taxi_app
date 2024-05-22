@@ -48,6 +48,17 @@
         {
             "username": "Master ",
             "password": "657f18518eaa2f41307895e18c3ba0d12d97b8a23c6de3966f52c6ba39a07ee4"
+        },
+        {
+            "username": "Sofia",
+            "password": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
+            "trips": [
+                [
+                    "\u0425\u043e\u0432\u0440\u0438\u043d\u043e",
+                    "\u0414\u0438\u043d\u0430\u043c\u043e",
+                    "22/05/2024 21:32"
+                ]
+            ]
         }
     ]
 }

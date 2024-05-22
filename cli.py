@@ -183,7 +183,7 @@ class Cli(Users, Database):
                 if username:
                     while True:
                         print("Выберите дальнейшее действие:")
-                        print("1. Вызвать такси     2. Посмотреть историю поездок       3. Выход из системы")
+                        print("\t1. Вызвать такси\n\t2. Посмотреть историю поездок\n\t3. Выход из системы")
                         action = int(input())
                         if action == 1:
                             self.create_order(username)
