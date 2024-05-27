@@ -3,6 +3,7 @@
 ***
 
 [Ссылка на доску Miro с архитектурой проекта.](https://miro.com/app/board/uXjVKMZ3lDQ=/)
+[Ссылка на Notion с задачами команды.](https://www.notion.so/bcfcc5f123a94bbfa7761a0eed4fd46d?v=4b08f9fe033d4a30bb780cf4af78f9c6=/)
 ![Screenshot2](screen2.png)
 ***
 >
